@@ -9,10 +9,12 @@ tasks > jenkins-build.js
 this script will basically attempt to run a given suit of N tests, and assuming that some tests passed,
 it will keep retrying with just the failing ones.
 
-So first run will be N, second run will be N - {tests that passed}, ... until everything passed or until it fail twice with the same error payload.
+So first run will be `N`, second run will be `N - {tests that passed}`, ... until everything passed or until it fail twice with the same error payload. (its possible to customize it to check all previous failure reasons for that test to avoiding failing the same step more then one time)
 
 Foreach build, it will generate a `mochawesome` report which will be located under `build_output > run_${retryNumber}`, which
-is a nice way to see the output of your entire suit of tests, and when tests fails, it will show the stack + a print, check here for some prints (https://github.com/adamgruber/mochawesome/tree/master/docs)
+is a nice way to see the output of your entire suit of tests, and when tests fails, it will show the stack + a print, check here for some prints (https://github.com/adamgruber/mochawesome/blob/master/docs/marge-report-1.0.1.png)
+
+![Mocha Awesome pics](https://github.com/adamgruber/mochawesome/blob/master/docs/marge-report-menu-1.0.1.png)
 
 
 By the end of the script it will also dump a summary containing:
