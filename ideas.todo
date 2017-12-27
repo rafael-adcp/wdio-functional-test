@@ -1,0 +1,13 @@
+renomear o "some tests" pra "9" tests FAILED
+
+
+remover dependendia no "jenkins.js" de "buildOutput"??? flaky?
+
+
+
+
+vantagens:
+pra cada retry tem um report separado
+consolido qntas vezes cada teste falhou
+trago todos os motivos de falha e em cada report de cada build da pra ver a stack + print
+roda otimizado localmente vai removendo os que passaram deixando somente os q falharam

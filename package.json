@@ -1,0 +1,33 @@
+{
+  "name": "wdio_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "nodejs ./tasks/jenkins-build.js",
+    "clean": "rm -Rf errorShots && rm -Rf results && rm -Rf test_report && rm -Rf builds_output && rm -f custom_report.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "child_process": "^1.0.2",
+    "events": "^1.1.1",
+    "lodash": "^4.17.4",
+    "mocha": "^4.0.1",
+    "mochawesome-report-generator": "^2.3.2",
+    "time-diff": "^0.3.1",
+    "util": "^0.10.3",
+    "wdio-junit-reporter": "^0.3.1",
+    "webdriverio": "^4.9.11"
+  },
+  "devDependencies": {
+    "wdio-concise-reporter": "^0.1.2",
+    "wdio-json-reporter": "^0.3.1",
+    "wdio-mochawesome-reporter": "^1.1.1",
+    "wdio-spec-reporter": "^0.1.2",
+    "wdio-dot-reporter": "0.0.9",
+    "wdio-mocha-framework": "^0.5.11",
+    "wdio-selenium-standalone-service": "0.0.9"
+  }
+}

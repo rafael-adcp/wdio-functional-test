@@ -1,0 +1,11 @@
+node_modules/
+mochawesome-report/
+errorShots/
+results/
+test_report/
+builds_output/
+
+.DS_STORE
+
+custom_report.json
+npm-debug.log

@@ -1,0 +1,7 @@
+{
+    "tasks": {
+        "jenkins_build": {
+            "maximum_retries": "200"
+        }
+    }
+}

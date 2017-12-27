@@ -1,0 +1,48 @@
+{
+  "specs": [
+    "./tests/**/*.js"
+  ],
+  "exclude": [],
+  "maxInstances": 10,
+  "capabilities": [
+    {
+      "maxInstances": 5,
+      "browserName": "chrome"
+    }
+  ],
+  "sync": true,
+  "logLevel": "silent",
+  "coloredLogs": true,
+  "deprecationWarnings": true,
+  "bail": 0,
+  "screenshotPath": "./errorShots/",
+  "baseUrl": "http: //www.google.com",
+  "waitforTimeout": 100000,
+  "connectionRetryTimeout": 90000,
+  "connectionRetryCount": 3,
+  "services": [
+    "selenium-standalone"
+  ],
+  "framework": "mocha",
+  "reporters": [
+    "spec",
+    "json",
+    "concise",
+    "mochawesome",
+    "junit"
+  ],
+  "mochawesomeOpts": {
+    "includeScreenshots": true
+  },
+  "reporterOptions": {
+    "outputDir": "./results",
+    "filename": "wdio-results",
+    "combined": true,
+    "junit": {
+      "outputDir": "./results"
+    }
+  },
+  "mochaOpts": {
+    "ui": "bdd"
+  }
+}
