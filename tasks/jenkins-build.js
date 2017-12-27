@@ -60,7 +60,6 @@ else {
             //generating the report
             exec("marge results/wdiomochawesome.json --reportDir './test_report' --reportTitle 'My Project Results' --showSkipped true --showHooks always --code true --inline true", { stdio: [process.stdin, process.stdout, process.stderr] });
 
-            //TODO: rename wdiomochawesome.html -> to index.html
             exec(`mkdir builds_output/run_${retryAttempts}`);
             exec(`cp -r ./test_report/* ./builds_output/run_${retryAttempts}/`);
             exec(`cp -r ./results/* ./builds_output/run_${retryAttempts}/`);
@@ -96,7 +95,7 @@ else {
             //if something failed change wdio.config.json to run it, otherwise mark build as passed
             if (currentReport.failure_list && currentReport.failure_list.length > 0) {
                 currentReport.failure_list.forEach(function (failedTest) {
-                    configWdio.specs.push('./tests/' + failedTest.test_spec.split('wdio_test/tests/')[1]);
+                    configWdio.specs.push('./tests/' + failedTest.test_spec.split('/tests/')[1]);
 
                     if (buildPayload.totalTestFailures[failedTest.test_spec]) {
                         buildPayload.totalTestFailures[failedTest.test_spec] = buildPayload.totalTestFailures[failedTest.test_spec] + 1;
@@ -168,6 +167,7 @@ else {
     //returning wdio.config to original state (what it was before starting to run tests)
     originalConfigWdio.specs = originalTestSpec;
     exec(`echo '${JSON.stringify(originalConfigWdio, null, 2)}' > wdio.config.json`)
+    exec(`echo '${JSON.stringify(buildPayload, null, 2)}' > build_summary.json`)
 }
 
 function removeProp(obj, propName) {

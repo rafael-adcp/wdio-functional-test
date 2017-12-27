@@ -9,3 +9,4 @@ builds_output/
 
 custom_report.json
 npm-debug.log
+build_summary.json
