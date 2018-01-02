@@ -20,8 +20,8 @@ page objects:
 	functions groups setters
 
 get secureUrl() {
-    browser.waitForVisible('.CR-third-party-url-secure');
-    return browser.getText('.CR-third-party-url-secure');
+    browser.waitForVisible('blah');
+    return browser.getText('blah');
   }
 
   set nonSecureUrl(url) {
