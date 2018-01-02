@@ -18,21 +18,22 @@ page objects:
 	getter, return an element or a value
 	setter with user actions, do something in the ui
 	functions groups setters
-
-get secureUrl() {
+	
+```
+get usuario() {
     browser.waitForVisible('blah');
     return browser.getText('blah');
   }
 
-  set nonSecureUrl(url) {
-    browser.click('.CR-linked-editor-non-secure');
+  set usuario(url) {
+    browser.click('.blah');
     browser.keys(url);
   }
 
-  appPage.nonSecureUrl = "set_value"
-  appPage.nonSecureUrl() // return set_value
+  appPage.usuario = "user_blah"
+  appPage.usuario() // returns: user_blah
 
-
+```
 
 
 conf/
