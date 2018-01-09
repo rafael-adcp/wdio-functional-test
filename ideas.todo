@@ -1,3 +1,15 @@
-rename "some tests" to "9" tests 
-validate test spec to see if it contain something before triggering builds
-rename wdiomochawesome.html -> to index.html
+1) wtv step of test failed, rename "some tests" to "9" tests +  show the failing tests + amount
+
+2) validate test spec to see if it contain something before triggering builds
+
+3) rename wdiomochawesome.html -> to index.html
+
+4) turn the build logic into a script and call it from 'build', 
+append calls to smoke and navigation under the build script
+make it run several times, or just one and if it fails game over? (for smoke and navigation)
+
+5) if smoke failed      dont run navigation
+
+6)if navigation failed dont run suite of tests
+
+7) print what tests will run before build stats
